@@ -1,0 +1,141 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: Orion Technologies LLC
+// Engineer: Vivin Rane
+// 
+// Create Date:    07/31/2015 
+// Design Name: 
+// Module Name:    Power Module
+// Project Name: 
+// Target Devices: Altera EPM570T144I5
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module processing(
+ input clk,
+ input [11:0] p_adc,  // Set ADC input
+ output [18:0] p_fetc  // Set FET control
+ );
+reg [11:0] r;
+reg s0,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15,s16,s17,s18,s19;
+ always @ (posedge clk or posedge reset)
+
+ //ADC processing
+ r=p_adc;
+ //FET selection
+ 
+ always @ (r)
+ s0=0,s1=0,s2=0,s3=0,s4=0,s5=0,s6=0,s7=0,s8=0,s9=0,s10=0,s11=0,s12=0,s13=0,s14=0,s15=0,s16=0,s17=0,s18=0,s19=0;
+ case (r)
+	0:  begin end  
+	1:  begin s0 =1; end
+	2:  begin s1 =1; end
+	3:  begin s0 =1; s1=1 ;end
+	4:  begin s2 =1; s1=1 ;end
+	5:  begin s2 =1; s0=1 ;end
+	6:  begin s2 =1; s1=1 ;end
+	7:  begin s0 =1; s1=1 s2=1 ;end
+	8:  begin s3 =1; end
+	9:  begin s0 =1; s3=1 ;end
+	10: begin s1 =1; s3=1 ;end
+	11: begin s0 =1; s1 =1; s3=1 ;end
+	12: begin s3 =1; s2=1 ;end
+	13: begin s0 =1; s3 =1; s2=1 ;end
+	14: begin s1 =1; s3 =1; s2=1 ;end
+	15: begin s0 =1; s1 =1; s3 =1; s2=1 ;end
+	16: begin s4 =1; end 
+	17: begin s0 =1;  s4 =1 ;end
+	18: begin s1 =1;  s4 =1 ;end
+	19: begin s0 =1;  s1 =1 s4 =1;end
+	20: begin s2 =1; s4 =1 ;end
+	21: begin s0 =1; s2 =1; s4 =1 ;end
+	22: begin s1 =1; s2 =1; s4 =1 ;end
+	23: begin s0=1; s1 =1; s2 =1; s4 =1 ;end
+	24: begin s3 =1; s4 =1 ;end
+	25: begin s0 =1; s3 =1; s4 =1 ;end
+	26: begin s1 =1; s3 =1; s4 =1 ;end
+	27: begin s0 =1; s1 =1; s3 =1; s4 =1 ;end
+	28: begin s2 =1; s3 =1; s4 =1 ;end
+	29: begin s0 =1; s2 =1; s3 =1; s4 =1 ;end
+	30: begin s1 =1; s2 =1; s3 =1; s4 =1 ;end
+	31: begin s0 =1; s1 =1; s2 =1; s3 =1; s4 =1 ;end
+	32: begin s5 =1; end 
+	33: begin s0 =1; s5 =1; end
+	34: begin s1 =1; s5 =1; end
+	35: begin s0 =1; s1 =1; s5 =1; end
+	36: begin s2 =1; s5 =1; end
+	37: begin s0 =1; s2 =1; s5 =1; end
+	38: begin s1 =1; s2 =1; s5 =1; end
+	39: begin s0 =1; s1 =1; s2 =1; s5 =1; end
+	40: begin s3 =1; s5 =1; end
+	41: begin s0 =1; s3 =1; s5 =1; end
+	42: begin s1 =1; s3 =1; s5 =1; end
+	43: begin s0 =1; s1 =1; s3 =1; s5 =1; end
+	44: begin s3 =1; s4 =1; s5 =1; end
+	45: begin s0 =1; s2 =1; s3 =1; s5 =1; end
+	46: begin s1 =1; s2 =1; s3 =1; s5 =1; end
+	47: begin s0 =1; s1 =1; s2 =1; s3 =1; s5 =1; end
+	48: begin s4 =1; s5 =1; end 
+	49: begin s0 =1; s4 =1; s5 =1; end
+	50: begin s1 =1; s4 =1; s5 =1;  end
+	51: begin s0 =1; s1 =1; s4 =1; s5 =1; end
+	52: begin s2 =1; s4 =1; s5 =1; end
+	53: begin s0 =1; s2 =1; s4 =1; s5 =1; end
+	54: begin s1 =1; s2 =1; s4 =1; s5 =1; end
+	55: begin s0 =1; s1 =1; s2 =1; s4 =1; s5 =1; end
+	56: begin s3 =1; s4 =1; s5 =1; end
+	57: begin s0 =1; s3 =1; s4 =1; s5 =1; end
+	58: begin s1 =1; s3 =1; s4 =1; s5 =1; end
+	59: begin s0 =1; s1 =1; s3 =1; s4 =1; s5 =1; end
+	60: begin s2 =1; s3 =1; s4 =1; s5 =1; end
+	61: begin s0 =1; s2 =1; s3 =1; s4 =1; s5 =1; end
+	62: begin s1 =1; s2 =1; s3 =1; s4 =1; s5 =1; end
+	63: begin s0 =1; end
+	64: begin s0 =1; end 
+	65: begin s0 =1; end
+	66: begin s0 =1; end
+	67: begin s0 =1; end
+	68: begin s0 =1; end
+	69: begin s0 =1; end
+	70: begin s0 =1; end
+	71: begin s0 =1; end
+	72: begin s0 =1; end
+	73: begin s0 =1; end
+	74: begin s0 =1; end
+	75: begin s0 =1; end
+	76: begin s0 =1; end
+	77: begin s0 =1; end
+	78: begin s0 =1; end
+	79: begin s0 =1; end
+	80: begin s0 =1; end 
+	81: begin s0 =1; end
+	82: begin s0 =1; end
+	83: begin s0 =1; end
+	84: begin s0 =1; end
+	85: begin s0 =1; end
+	86: begin s0 =1; end
+	87: begin s0 =1; end
+	88: begin s0 =1; end
+	89: begin s0 =1; end
+	90: begin s0 =1; end
+	91: begin s0 =1; end
+	92: begin s0 =1; end
+	93: begin s0 =1; end
+	94: begin s0 =1; end
+	95: begin s0 =1; end
+	96: begin s0 =1; end 
+	97: begin s0 =1; end
+	98: begin s0 =1; end
+	99: begin s0 =1; end
+   100: begin s0 =1; end
+ end
+ end
+ 
+endmodule
